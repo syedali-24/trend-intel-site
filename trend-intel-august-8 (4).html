@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trend Intel — August 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0916;
+    --bg-grid: #14112a;
+    --card:#151129;
+    --card-hi:#1b1636;
+    --border: #2a2350;
+    --purple: #a855f7;
+    --purple-soft: #7c5cff;
+    --hot: #ff4d6d;
+    --gold: #ffb547;
+    --ink: #f3f0ff;
+    --ink-dim:#9d94c0;
+    --ink-dimmer:#6a628f;
+    --tiktok-a:#25F4EE;
+    --tiktok-b:#FE2C55;
+    --yt:#ff3b3b;
+    --ig1:#f9ce34;
+    --ig2:#ee2a7b;
+    --ig3:#6228d7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(168,85,247,0.16), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(255,77,109,0.10), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    padding-bottom:80px;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; }
+  .display{ font-family:'Space Grotesk', sans-serif; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    max-width:1100px;
+    margin:0 auto;
+    padding:52px 24px 28px;
+    position:relative;
+  }
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--purple-soft); margin-bottom:18px;
+  }
+  .live-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--hot);
+    box-shadow:0 0 0 0 rgba(255,77,109,0.6);
+    animation:pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(255,77,109,0.55);}
+    70%{box-shadow:0 0 0 9px rgba(255,77,109,0);}
+    100%{box-shadow:0 0 0 0 rgba(255,77,109,0);}
+  }
+  h1{
+    font-size:clamp(34px, 6vw, 58px);
+    line-height:1.02;
+    margin:0 0 14px;
+    font-weight:700;
+    letter-spacing:-0.02em;
+  }
+  h1 span{color:var(--purple);}
+  .sub{
+    max-width:640px;
+    color:var(--ink-dim);
+    font-size:15.5px;
+    line-height:1.6;
+  }
+  .sub b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- LEGEND / FILTER BAR ---------- */
+  .controls{
+    max-width:1100px;
+    margin:26px auto 0;
+    padding:0 24px;
+    display:flex; flex-wrap:wrap; gap:10px;
+    align-items:center;
+  }
+  .ctrl-group{
+    display:flex; gap:6px; flex-wrap:wrap;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:5px; border-radius:12px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    padding:7px 12px;
+    border-radius:8px;
+    border:1px solid transparent;
+    background:transparent;
+    color:var(--ink-dim);
+    cursor:pointer;
+    transition:all .15s ease;
+    white-space:nowrap;
+  }
+  .chip:hover{ color:var(--ink); }
+  .chip.active{
+    background:linear-gradient(135deg, var(--purple), var(--purple-soft));
+    color:#fff;
+  }
+  .search{
+    flex:1; min-width:180px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:11px 14px;
+    color:var(--ink);
+    font-family:'Inter';
+    font-size:13.5px;
+    outline:none;
+  }
+  .search::placeholder{ color:var(--ink-dimmer); }
+  .search:focus{ border-color:var(--purple-soft); }
+
+  /* ---------- MUST SHOOT STRIP ---------- */
+  .must-shoot{
+    max-width:1100px;
+    margin:40px auto 8px;
+    padding:0 24px;
+  }
+  .must-shoot h2{
+    font-family:'Space Grotesk';
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 14px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .must-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+  }
+  @media (max-width:800px){ .must-grid{grid-template-columns:1fr;} }
+  .must-card{
+    background:linear-gradient(160deg, var(--card-hi), var(--card));
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    position:relative;
+    overflow:hidden;
+  }
+  .must-card::before{
+    content:"";
+    position:absolute; top:-40%; right:-30%;
+    width:160px; height:160px;
+    background:radial-gradient(circle, rgba(255,181,71,0.18), transparent 70%);
+  }
+  .must-rank{
+    font-family:'Space Grotesk'; font-weight:700; font-size:26px;
+    color:var(--gold); margin-bottom:6px;
+  }
+  .must-brand{ font-weight:600; font-size:15px; margin-bottom:6px; }
+  .must-hook{ font-size:13px; color:var(--ink-dim); line-height:1.5; }
+
+  /* ---------- OFFER LIST ---------- */
+  .list{
+    max-width:1100px;
+    margin:44px auto 0;
+    padding:0 24px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .offer{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    transition:border-color .15s ease;
+  }
+  .offer.hidden{ display:none; }
+  .offer:hover{ border-color:#3a3170; }
+  .offer-head{
+    display:flex; align-items:center; gap:16px;
+    padding:18px 20px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .rank{
+    font-family:'Space Grotesk'; font-weight:700;
+    font-size:15px; color:var(--ink-dimmer);
+    width:26px; flex-shrink:0;
+  }
+  .brand-block{ flex:1; min-width:0; }
+  .brand-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .brand-name{ font-family:'Space Grotesk'; font-weight:700; font-size:17px; }
+  .payout{ color:var(--ink-dimmer); font-size:12.5px; font-family:'IBM Plex Mono'; }
+  .tags{ display:flex; gap:6px; margin-top:8px; flex-wrap:wrap; }
+  .tag{
+    font-family:'IBM Plex Mono'; font-size:10.5px;
+    padding:3px 8px; border-radius:6px;
+    border:1px solid var(--border);
+    color:var(--ink-dim);
+    display:flex; align-items:center; gap:5px;
+  }
+  .tag.urgency{ border-color:rgba(255,77,109,0.4); color:#ff8fa3; }
+  .tag .dot{ width:6px;height:6px;border-radius:50%; }
+  .tag.tiktok .dot{ background:linear-gradient(90deg, var(--tiktok-a), var(--tiktok-b)); }
+  .tag.youtube .dot{ background:var(--yt); }
+  .tag.instagram .dot{ background:linear-gradient(90deg, var(--ig1), var(--ig2), var(--ig3)); }
+
+  .heat{ display:flex; gap:2px; flex-shrink:0; align-items:center; }
+  .flame{ font-size:15px; opacity:0.25; filter:grayscale(1); }
+  .flame.on{ opacity:1; filter:none; }
+
+  .chevron{
+    color:var(--ink-dimmer);
+    transition:transform .2s ease;
+    flex-shrink:0;
+  }
+  .offer.open .chevron{ transform:rotate(180deg); }
+
+  .offer-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .28s ease;
+  }
+  .offer.open .offer-body{ max-height:900px; }
+  .offer-body-inner{
+    padding:0 20px 22px 62px;
+    border-top:1px solid var(--border);
+    margin-top:0;
+    padding-top:18px;
+  }
+  .angle{
+    margin-bottom:16px;
+    padding-left:16px;
+    border-left:2px solid var(--border);
+  }
+  .angle:last-child{ margin-bottom:0; }
+  .angle-hook{
+    font-size:14.5px; line-height:1.55; color:var(--ink);
+    margin-bottom:6px;
+  }
+  .angle-hook b{ color:var(--purple-soft); }
+  .angle-meta{
+    display:flex; gap:14px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-dimmer);
+  }
+  .angle-meta span b{ color:var(--ink-dim); font-weight:500; }
+  .starter{
+    margin-top:8px;
+    background:#0f0c22;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:9px 12px;
+    font-size:12.5px;
+    color:#c9c2f0;
+    font-style:italic;
+  }
+  .starter::before{ content:"\201C  "; color:var(--purple-soft); font-style:normal; }
+
+  .skip-note{
+    margin-top:14px;
+    padding:10px 12px;
+    border-radius:8px;
+    background:rgba(255,77,109,0.08);
+    border:1px solid rgba(255,77,109,0.25);
+    font-size:12.5px;
+    color:#ff8fa3;
+  }
+
+  footer{
+    max-width:1100px;
+    margin:56px auto 0;
+    padding:24px 24px 0;
+    border-top:1px solid var(--border);
+    color:var(--ink-dimmer);
+    font-size:12.5px;
+    line-height:1.6;
+  }
+  .empty-state{
+    max-width:1100px; margin:40px auto; padding:0 24px;
+    color:var(--ink-dimmer); font-size:14px; display:none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow"><span class="live-dot"></span> LIVE TREND SIGNAL &nbsp;·&nbsp; TIKTOK &nbsp;·&nbsp; YOUTUBE &nbsp;·&nbsp; INSTAGRAM &nbsp;·&nbsp; GOOGLE TRENDS &nbsp;·&nbsp; UPDATED AUG 8</div>
+  <h1>Trend Intel<br><span>Ranked & Ready to Shoot</span></h1>
+  <p class="sub">Every angle below is tied to something <b>actually trending this week</b> — a real viral moment, a real drop, a real search spike. Ranked by priority. Tap any offer to expand the full angle set, platform fit, and a ready-to-use opening line.</p>
+</header>
+
+<div class="controls">
+  <div class="ctrl-group" id="platform-filters">
+    <button class="chip active" data-platform="all">ALL</button>
+    <button class="chip" data-platform="tiktok">🎵 TIKTOK</button>
+    <button class="chip" data-platform="youtube">▶️ YOUTUBE</button>
+    <button class="chip" data-platform="instagram">📸 IG</button>
+  </div>
+  <div class="ctrl-group" id="heat-filters">
+    <button class="chip active" data-heat="0">ALL HEAT</button>
+    <button class="chip" data-heat="3">🔥🔥🔥 ONLY</button>
+  </div>
+  <input class="search" id="search" placeholder="Search a brand…" />
+</div>
+
+<div class="must-shoot">
+  <h2>⚡ This Week's Must-Shoot Top 3</h2>
+  <div class="must-grid">
+    <div class="must-card">
+      <div class="must-rank">01</div>
+      <div class="must-brand">Target — Owala Just Launched Bags</div>
+      <div class="must-hook">Viral water-bottle brand dropped totes/crossbodies exclusively at Target, plus a sitewide 20% off deal ending today. Freshest, highest-urgency signal on the whole board.</div>
+    </div>
+    <div class="must-card">
+      <div class="must-rank">02</div>
+      <div class="must-brand">Foot Locker — "It Always Will Be"</div>
+      <div class="must-hook">Brand-new campaign dropped yesterday (Aug 7), Method Man narration. As fresh as trend content gets.</div>
+    </div>
+    <div class="must-card">
+      <div class="must-rank">03</div>
+      <div class="must-brand">Nordstrom — Anniversary Sale Final Hours</div>
+      <div class="must-hook">Real deadline: sale ends Aug 10, prices revert after. Urgency here is factual, not manufactured.</div>
+    </div>
+  </div>
+</div>
+
+<div class="list" id="offer-list">
+
+  <!-- OFFER 1 -->
+  <div class="offer" data-platforms="tiktok youtube" data-heat="3" data-name="target">
+    <div class="offer-head">
+      <div class="rank mono">01</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Target</div>
+          <span class="payout mono">$750 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ trending 5–7 days</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+          <span class="tag youtube"><span class="dot"></span>YouTube</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame on">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">🔥 <b>"Target's security had to get involved over a Needoh"</b> — the viral squishy-toy cart mix-up story is actively trending on TikTok right now (#needoh #target).</div>
+          <div class="angle-meta"><span><b>Trigger:</b> curiosity gap</span><span><b>Format:</b> reaction → haul reveal</span></div>
+          <div class="starter">Okay so this literally just happened to me at Target and I need to explain before I show you what I got—</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Target just launched its own creator program — <b>Club Target + Target Ambassadors (powered by LTK)</b> — explicitly courting affiliate content.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> meta/self-aware</span><span><b>Format:</b> talking-head + haul</span></div>
+          <div class="starter">Target literally just started paying creators to shop there — so obviously I said yes.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Dorm finds under $25 — Mr. Coffee maker, Brita pitcher, Studio McGee decor are this week's named best-sellers.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> practical value</span><span><b>Format:</b> shot list haul</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Studio McGee fall wreath / 5-wick candle — trending in home-decor TikTok as "fall creeping into Target already."</div>
+          <div class="angle-meta"><span><b>Trigger:</b> seasonal anticipation</span><span><b>Format:</b> commentary + haul</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">🔥 <b>Owala just launched bags</b> — the viral water-bottle brand dropped totes and crossbodies exclusively in Target's new back-to-school section, plus a live sitewide 20% off Owala ends today (Aug 8). Real deadline.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> brand-extension novelty + urgency</span><span><b>Format:</b> haul + deal callout</span></div>
+          <div class="starter">Owala doesn't just make water bottles anymore — they make BAGS now, and Target has them first.</div>
+        </div>
+
+        <div class="skip-note">Non-RevShare Target SKU converts lower per click — lean on the Needoh hook specifically for that variant instead of a generic haul.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 2 -->
+  <div class="offer" data-platforms="tiktok youtube instagram" data-heat="3" data-name="costco">
+    <div class="offer-head">
+      <div class="rank mono">02</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Costco</div>
+          <span class="payout mono">$750 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ evergreen this month</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+          <span class="tag instagram"><span class="dot"></span>IG Reels</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame on">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">🔥 <b>Our Place Titanium Always Pan 6-piece ($349.99)</b> — the most viral DTC cookware brand of the last 3 years just dropped a Costco-exclusive titanium version.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> aspirational + exclusivity</span><span><b>Format:</b> unboxing/reveal</span></div>
+          <div class="starter">I finally caved and got the Always Pan — but at Costco, and it's titanium.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Häagen-Dazs Dubai chocolate bars — Costco's take on the pistachio-kataifi trend still one of the most-searched food trends of 2026.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> comment bait</span><span><b>Format:</b> taste test</span></div>
+          <div class="starter">Costco finally has Dubai chocolate and I have thoughts.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">TheraFace Mask by Therabody — spotted in this week's haul videos, LED beauty-tech still the #1 beauty-tech category on TikTok.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> visual novelty</span><span><b>Format:</b> GRWM/haul</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Ghost Energy Drink Variety Pack (18-pack) — trending "new at Costco" item, quick relatable pickup segment.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> relatability</span><span><b>Format:</b> quick cut</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">CleverMade Foldable Tote on Wheels — organizational, strong for "haul but make it functional" audience.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> practical value</span><span><b>Format:</b> demo</span></div>
+        </div>
+
+        <div class="skip-note">Fall-food content is getting some pushback in comments this week — if leaning fall, acknowledge it's early ("I know it's still summer but…") instead of ignoring it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 3 -->
+  <div class="offer" data-platforms="tiktok" data-heat="2" data-name="target">
+    <div class="offer-head">
+      <div class="rank mono">03</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Target</div>
+          <span class="payout mono">$750 · Non-RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ trending 5–7 days</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+        <div class="angle">
+          <div class="angle-hook">Same Needoh security-incident hook as #01 — but this SKU converts lower per click, so lead with the drama immediately, don't build up to it.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> curiosity gap</span><span><b>Format:</b> reaction, cold open</span></div>
+          <div class="starter">Target security literally stopped me over a squishy toy — anyway here's what happened next.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">🔥 Owala's new bag launch — same fresh drop as #01, use the exclusivity angle ("Target has it first") since it's the single freshest story in the whole Target pool.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> brand-extension novelty</span><span><b>Format:</b> haul reveal</span></div>
+          <div class="starter">Owala just made bags and Target's the only place that has them right now.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Dorm move-in transformation before/after — highest search-intent window of the year, runs through move-in week.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> practical urgency</span><span><b>Format:</b> before/after</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Club Target / LTK creator-program angle — "Target is paying creators to shop there now."</div>
+          <div class="angle-meta"><span><b>Trigger:</b> meta/self-aware</span><span><b>Format:</b> talking-head + haul</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Studio McGee fall decor drop — "fall's already at Target" commentary angle, works well as a shorter/quicker video for this lower-converting SKU.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> seasonal anticipation</span><span><b>Format:</b> quick commentary</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 4 -->
+  <div class="offer" data-platforms="youtube instagram" data-heat="2" data-name="lego">
+    <div class="offer-head">
+      <div class="rank mono">04</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Lego</div>
+          <span class="payout mono">$500 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ early-access window</span>
+          <span class="tag youtube"><span class="dot"></span>YouTube</span>
+          <span class="tag instagram"><span class="dot"></span>IG Reels</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">🔥 <b>LEGO Ideas The X-Files (21369)</b> — Insiders early access just opened (July 31). Freshest AFOL-collector drop right now.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> exclusivity</span><span><b>Format:</b> build timelapse</span></div>
+          <div class="starter">Got the new X-Files LEGO set before it's even public — here's the build.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">LEGO Icons Jaguar E-Type — just revealed, appeals to "adult LEGO is a whole personality" crowd driving the category.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> identity/status</span><span><b>Format:</b> desk-decor reveal</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">LEGO x Olivia Rodrigo collection — fresh crossover audience (music fans + collectors), dropped in July.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> fandom crossover</span><span><b>Format:</b> unboxing</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">LEGO Botanicals (Tulip Bouquet, Peace Lily) — proven "desk decor that's actually a $200 set" satisfying-build format.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> satisfying/ASMR</span><span><b>Format:</b> timelapse</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">LEGO FIFA World Cup 2026 collection (Ronaldo/Messi minifigs) — World Cup hype building fast, sports-crossover LEGO content is underserved right now.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> sports crossover</span><span><b>Format:</b> reveal + reaction</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 5 -->
+  <div class="offer" data-platforms="tiktok youtube" data-heat="2" data-name="sam's club">
+    <div class="offer-head">
+      <div class="rank mono">05</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Sam's Club — Flash Poll, Summer</div>
+          <span class="payout mono">$750 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ live promo, this month</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+          <span class="tag youtube"><span class="dot"></span>YouTube</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">Membership half-price promotion, live right now — natural "here's why I finally joined" framing for the flash-poll/survey format.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> value/urgency</span><span><b>Format:</b> survey → reveal</span></div>
+          <div class="starter">I finally joined Sam's Club because the membership is half off — here's if it was worth it.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">New bakery drops — strawberry cake, apple fritters, cinnamon chip scones — proven weekly "what's new" content engine.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> novelty/routine</span><span><b>Format:</b> weekly series</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Member's Mark just hit its goal of removing 40+ synthetic ingredients — good "why I trust the store brand now" health-conscious angle.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> trust/health</span><span><b>Format:</b> talking-head</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">🔥 New Ventigo insulated food-jar 2-pack — this week's most-shown "new arrival" in Sam's Club haul videos, purpose-built for back-to-school lunch prep.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> practical/timely</span><span><b>Format:</b> unboxing + lunch-prep demo</span></div>
+          <div class="starter">Sam's Club just dropped the lunch jar that's about to be in every kid's backpack this year.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Disney Halloween Village Set + this week's Clorox "Back to School Variety Pack" — early-Halloween crossover is already showing up in Sam's Club weekly-ad hauls, good for a "already?!" reaction hook.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> seasonal surprise</span><span><b>Format:</b> reaction haul</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 6 -->
+  <div class="offer" data-platforms="instagram youtube" data-heat="3" data-name="nordstrom">
+    <div class="offer-head">
+      <div class="rank mono">06</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Nordstrom</div>
+          <span class="payout mono">$750 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ ends Aug 10 — real deadline</span>
+          <span class="tag instagram"><span class="dot"></span>IG Reels</span>
+          <span class="tag youtube"><span class="dot"></span>YouTube</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame on">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">🔥 Anniversary Sale — final days, ends Monday Aug 10, prices revert after. This urgency is factual, not manufactured.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> real deadline</span><span><b>Format:</b> countdown haul</span></div>
+          <div class="starter">The Nordstrom Anniversary Sale ends in days — this is your actual last chance, here's what I grabbed.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Dyson Airwrap — $130 off, one of the sale's most-searched exclusives, rarely discounted this deep.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> rare deal</span><span><b>Format:</b> deal callout</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Le Labo fragrance discovery set — genuinely rare price drop on a brand that almost never goes on sale.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> smart-shopper flex</span><span><b>Format:</b> GRWM</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Faherty rugby shirt — flagged as one of the sale's breakout trending pieces for the summer-to-fall transition wardrobe.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> seasonal transition</span><span><b>Format:</b> try-on</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Nordstrom x Flabelus animal-print collab — limited-edition, visually distinct, strong thumbnail material.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> visual novelty</span><span><b>Format:</b> reveal</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 7 -->
+  <div class="offer" data-platforms="tiktok youtube" data-heat="3" data-name="footlocker">
+    <div class="offer-head">
+      <div class="rank mono">07</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Foot Locker</div>
+          <span class="payout mono">$500</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ dropped yesterday — ride now</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+          <span class="tag youtube"><span class="dot"></span>YouTube</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame on">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">🔥 <b>"It Always Will Be Foot Locker"</b> — brand-new campaign launched Aug 7, narrated by Method Man, tracing sneaker culture from the Air Jordan 1 to today.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> cultural moment</span><span><b>Format:</b> nostalgia haul</span></div>
+          <div class="starter">Foot Locker just dropped a whole sneaker-culture campaign — so obviously I had to go spend the $500.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">The Striper nostalgia angle — campaign leans hard into the iconic striped-uniform legacy, strong for older Gen Z/millennial sneakerheads.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> nostalgia</span><span><b>Format:</b> talking-head</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Back-to-school sneaker rotation still in peak window — pair the culture-moment hook with the practical haul.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> seasonal need</span><span><b>Format:</b> unboxing</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">🔥 New Balance 204L "Ribbon Pack" (Sea Salt/Linen colorway) — dropped early, TikTok is already calling it a top sneaker of 2026.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> early-access flex</span><span><b>Format:</b> unboxing/try-on</span></div>
+          <div class="starter">This New Balance colorway isn't even out everywhere yet and I already got mine at Foot Locker.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Adidas Samba — still one of the most consistently viral sneaker searches on TikTok, styled hard right now for the fall shoe transition.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> evergreen viral demand</span><span><b>Format:</b> styling/try-on</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 8 -->
+  <div class="offer" data-platforms="tiktok" data-heat="2" data-name="target">
+    <div class="offer-head">
+      <div class="rank mono">08</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Target — Limited Time Flash Poll</div>
+          <span class="payout mono">$750 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ trending 5–7 days</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+        <div class="angle">
+          <div class="angle-hook">🔥 Poll the Needoh drama first — "should I go check out this viral Target thing?" then reveal the haul. Same story driving #01, but the survey format needs the poll to come before the product.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> participation + curiosity gap</span><span><b>Format:</b> poll → reveal</span></div>
+          <div class="starter">I asked you guys what to buy at Target with $750 — here's what won.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">"Owala bag or backpack — you pick" — poll the new Owala tote/crossbody launch against a classic backpack, then reveal what you bought.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> participation</span><span><b>Format:</b> poll → reveal</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">Dorm room A vs dorm room B poll, using the Best Life "under $25 finds" shot list as the product pool.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> participation + practical</span><span><b>Format:</b> poll → transformation</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">"Fall decor already? Yes or no" — poll on the Studio McGee wreath/candle drop landing while it's still technically summer.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> seasonal debate</span><span><b>Format:</b> poll → haul</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">"You pick my Owala colorway" — poll between the new bag colors/prints, strong comment-bait since the drop is brand new and colorway opinions run hot.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> participation + brand-new drop</span><span><b>Format:</b> poll → unboxing</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 9 -->
+  <div class="offer" data-platforms="tiktok instagram" data-heat="2" data-name="cash">
+    <div class="offer-head">
+      <div class="rank mono">09</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">Dynamic Rewarded Discovery — Cash V2</div>
+          <span class="payout mono">$750 · New</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ refresh weekly</span>
+          <span class="tag tiktok"><span class="dot"></span>TikTok</span>
+          <span class="tag instagram"><span class="dot"></span>IG Reels</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+        <div class="angle">
+          <div class="angle-hook">Broadest-appeal offer — tie the "no strings" cash-flex hook to whatever's trending that week instead of a fixed product list. Right now: Needoh virality, LEGO X-Files drop, Nordstrom last-chance, back-to-school spend.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> pure cash-flex</span><span><b>Format:</b> reveal + ranking</span></div>
+          <div class="starter">$750 just landed — no strings. Here's what I'm buying first.</div>
+        </div>
+        <div class="angle">
+          <div class="angle-hook">"Ranking what I'd spend $750 on — fight me in the comments" is a strong engagement-bait format. Refresh the ranked list weekly against what's actually trending, don't reuse the same items.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> controversy/debate</span><span><b>Format:</b> ranked list</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">"$750 vs the Owala bag drop" — tie the cash reveal directly to the Owala-at-Target moment blowing up this week, since it's the single hottest live product story right now.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> topical tie-in</span><span><b>Format:</b> reveal + shopping trip</span></div>
+          <div class="starter">$750 just landed and Owala dropped bags this week — you know exactly where I'm going.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">"POV: the deposit hits during the Nordstrom Anniversary Sale's last hours" — stack the cash-flex hook against Nordstrom's real Aug 10 deadline for a built-in urgency angle.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> real deadline</span><span><b>Format:</b> reveal + countdown</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">"What would you build with $750 in LEGO" — niche-down version of the ranking format aimed at the collector audience, using the fresh X-Files/Icons drops as bait.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> niche community</span><span><b>Format:</b> ranked list</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER 10 -->
+  <div class="offer" data-platforms="instagram youtube" data-heat="3" data-name="john lewis">
+    <div class="offer-head">
+      <div class="rank mono">10</div>
+      <div class="brand-block">
+        <div class="brand-row">
+          <div class="brand-name">John Lewis (UK)</div>
+          <span class="payout mono">£750 · RevShare</span>
+        </div>
+        <div class="tags">
+          <span class="tag urgency">⏱ fresh — previewed Aug 3</span>
+          <span class="tag instagram"><span class="dot"></span>IG Reels</span>
+          <span class="tag youtube"><span class="dot"></span>YouTube</span>
+        </div>
+      </div>
+      <div class="heat"><span class="flame on">🔥</span><span class="flame on">🔥</span><span class="flame on">🔥</span></div>
+      <div class="chevron">▾</div>
+    </div>
+    <div class="offer-body">
+      <div class="offer-body-inner">
+
+        <div class="angle">
+          <div class="angle-hook">🔥 <b>£1,160 Beauty Advent Calendar teaser</b> — John Lewis just previewed its biggest-ever calendar (Aug 3), the earliest preview in its history, featuring Fenty Beauty, Trinny, Elemis + first-ever beauty tech (Foreo UFO mini).</div>
+          <div class="angle-meta"><span><b>Trigger:</b> "Christmas in August" novelty</span><span><b>Format:</b> reveal</span></div>
+          <div class="starter">John Lewis previewed Christmas in AUGUST and I'm already planning my haul.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">New Sports & Wellness department (Oxford Street, launched Aug 4) — men's running trainer searches up 280% YoY on their site.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> real search-spike data</span><span><b>Format:</b> haul + department tour</span></div>
+          <div class="starter">John Lewis just went all-in on fitness — here's what £750 gets you in the new department.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">John Lewis was just named UK's #1 retailer in the Customer Satisfaction Index and won Which? Retailer of the Year — solid trust-signal line for any haul intro.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> trust/authority</span><span><b>Format:</b> intro line</span></div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">🔥 John Lewis just launched a TikTok Shop pilot (Jo Malone, Estée Lauder, Augustinus Bader) plus 45-minute Uber Eats delivery on 3,000 products — "I ordered from John Lewis on Uber Eats" is a genuinely novel, unclaimed hook.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> novelty/first-mover</span><span><b>Format:</b> delivery unboxing</span></div>
+          <div class="starter">You can now get John Lewis delivered through Uber Eats in 45 minutes — I had to try it.</div>
+        </div>
+
+        <div class="angle">
+          <div class="angle-hook">£800m store transformation is visibly underway — Glasgow, Cambridge, Leicester and Reading all mid-refurb right now, giving a legitimate "behind the scenes of the new John Lewis" tour angle most creators haven't touched yet.</div>
+          <div class="angle-meta"><span><b>Trigger:</b> exclusive access feel</span><span><b>Format:</b> store-tour vlog</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="empty-state" id="empty-state">No offers match those filters. Clear a filter or try a different search.</div>
+
+<footer>
+  <p><b style="color:var(--ink-dim)">Heat rating</b> reflects how fresh/viral the signal is this week, not payout size. <b style="color:var(--ink-dim)">Urgency window</b> tells you how long the angle stays hot before it needs replacing.</p>
+</footer>
+
+<script>
+  const offers = Array.from(document.querySelectorAll('.offer'));
+  let activePlatform = 'all';
+  let activeHeat = 0;
+
+  document.querySelectorAll('.offer-head').forEach(head=>{
+    head.addEventListener('click', ()=>{
+      head.parentElement.classList.toggle('open');
+    });
+  });
+
+  function applyFilters(){
+    const query = document.getElementById('search').value.trim().toLowerCase();
+    let visibleCount = 0;
+    offers.forEach(o=>{
+      const platforms = o.dataset.platforms.split(' ');
+      const heat = parseInt(o.dataset.heat, 10);
+      const name = o.dataset.name;
+      const platformMatch = activePlatform === 'all' || platforms.includes(activePlatform);
+      const heatMatch = activeHeat === 0 || heat >= activeHeat;
+      const searchMatch = query === '' || name.includes(query);
+      const show = platformMatch && heatMatch && searchMatch;
+      o.classList.toggle('hidden', !show);
+      if(show) visibleCount++;
+    });
+    document.getElementById('empty-state').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  document.querySelectorAll('#platform-filters .chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      document.querySelectorAll('#platform-filters .chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      activePlatform = chip.dataset.platform;
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('#heat-filters .chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      document.querySelectorAll('#heat-filters .chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      activeHeat = parseInt(chip.dataset.heat, 10);
+      applyFilters();
+    });
+  });
+
+  document.getElementById('search').addEventListener('input', applyFilters);
+</script>
+
+</body>
+</html>
